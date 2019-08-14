@@ -52,6 +52,6 @@ class JsonFileTest extends TestCase
         $jsonFile = new JsonFile();
         $data     = $jsonFile->getDataAsString($parser);
 
-        $this->assertEquals('Choose correct city', $data);
+        $this->assertEquals('Choose correct city', $data['error']);
     }
 }

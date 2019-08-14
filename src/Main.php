@@ -4,12 +4,16 @@ namespace App;
 
 class Main
 {
+    /**
+     * @var \App\Presenter
+     */
     private $presenter;
 
+    /**
+     * Подобие контроллера для главной страницы
+     */
     public function run()
     {
-        session_start();
-
         $save = $_GET['save'] ?? '';
 
         if (!empty($_GET['city'])) {
@@ -40,7 +44,7 @@ class Main
     /**
      * @return \App\Presenter
      */
-    public function getPresenter()
+    public function getPresenter(): ?Presenter
     {
         return $this->presenter;
     }

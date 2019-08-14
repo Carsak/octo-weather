@@ -6,8 +6,20 @@ use App\Parser;
 use App\Presenter;
 use DOMDocument;
 
+/**
+ * Сохраняет файлы в XML
+ * Для XML:
+ *      Дата
+ *      Скорость ветра
+ *      Температура
+ */
 class XmlFile extends File
 {
+    /**
+     * Загрузить файл
+     *
+     * @param \App\Parser $parser
+     */
     public function save(Parser $parser)
     {
         $data = $this->getDataAsString($parser);
@@ -23,6 +35,13 @@ class XmlFile extends File
         echo $data;
     }
 
+    /**
+     * Получить данные в виде строки
+     *
+     * @param \App\Parser $parser
+     *
+     * @return string
+     */
     public function getDataAsString(Parser $parser): string
     {
         $presenter = new Presenter($parser);
@@ -61,12 +80,3 @@ class XmlFile extends File
         return $dom->saveXML();
     }
 }
-
-/**
- *  *
- * Для XML:
- * Дата
- * Скорость ветра
- * Температура
- * т.д.
- */

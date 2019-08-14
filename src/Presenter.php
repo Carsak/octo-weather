@@ -4,15 +4,23 @@ namespace App;
 
 use App\Exception\CityNotFoundException;
 
+/**
+ * Хранить данные в удобном формате
+ */
 class Presenter
 {
     /**
      * @var \App\Parser
      */
     private $parser;
-
+    /**
+     * @var bool
+     */
     private $isCityCorrect = true;
 
+    /**
+     * информация о погоде
+     */
     public $temp;
     public $city;
     public $cityId;
@@ -24,6 +32,9 @@ class Presenter
     public $windDirection;
     public $humidity;
 
+    /**
+     * @param \App\Parser $parser
+     */
     public function __construct(Parser $parser)
     {
         $this->parser = $parser;
@@ -48,6 +59,11 @@ class Presenter
         $this->windDirection = $data['wind']['deg'];
     }
 
+    /**
+     * Можно ли получить погоду для этого города
+     *
+     * @return bool
+     */
     public function isCityCorrect()
     {
         return $this->isCityCorrect;
