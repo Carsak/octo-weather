@@ -27,7 +27,7 @@ class JsonFile extends File
         header("Cache-Control: public");
         header("Content-Description: File Transfer");
         header("Content-Length: " . strlen($data));
-        header("Content-Disposition: attachment; filename={$filename}.json");
+        header("Content-Disposition: attachment; filename={$filename}");
         header("Content-Type: application/octet-stream; ");
         header("Content-Transfer-Encoding: binary");
 
