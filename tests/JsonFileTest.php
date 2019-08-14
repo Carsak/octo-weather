@@ -50,7 +50,7 @@ class JsonFileTest extends TestCase
         $parser = new Parser(City::INCORRECT_NAME);
 
         $jsonFile = new JsonFile();
-        $data     = $jsonFile->getDataAsString($parser);
+        $data     = json_decode($jsonFile->getDataAsString($parser), 1);
 
         $this->assertEquals('Choose correct city', $data['error']);
     }
