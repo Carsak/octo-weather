@@ -12,8 +12,6 @@ services:
       - php
 
   php:
-    build:
-      context: ./
-      dockerfile: ./php/Dockerfile
+    image: php:7.2-fpm
     volumes:
         - ./:/var/www/html
