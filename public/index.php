@@ -52,7 +52,7 @@ $presenter = $main->getPresenter();
                             </div>
                         </div>
                     <? else: ?>
-                        <h2>Choose City First</h2>
+                        <h2>Enter City First</h2>
                     <? endif ?>
                 </div>
             </div>
