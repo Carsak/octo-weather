@@ -6,6 +6,9 @@ use Tests\City;
 
 class ParserTest extends TestCase
 {
+    /**
+     * Проверка верного ответа от АПИ
+     */
     public function testPositiveParsing()
     {
         $parser = new \App\Parser('Almaty');
@@ -15,6 +18,9 @@ class ParserTest extends TestCase
         $this->assertEquals(City::NAME, $data['name']);
     }
 
+    /**
+     * Проверка отрицательного ответа от АПИ
+     */
     public function testNegativeParsing()
     {
         $this->expectException(CityNotFoundException::class);

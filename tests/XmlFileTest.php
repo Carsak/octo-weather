@@ -6,9 +6,14 @@ use App\File\XmlFile;
 use App\Parser;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Проверка работы с xml файлом
+ */
 class XmlFileTest extends TestCase
 {
-
+    /**
+     * Проверка корректной записи
+     */
     public function testPositiveGetDataAsString()
     {
         $parser = new Parser(City::NAME);
@@ -21,6 +26,9 @@ class XmlFileTest extends TestCase
         $this->assertEquals(City::ID, (int)$xml->city_id);
     }
 
+    /**
+     * Проверка, если город передан неверно
+     */
     public function testNegativeGetDataAsString()
     {
         $parser = new Parser(City::INCORRECT_NAME);
@@ -33,7 +41,7 @@ class XmlFileTest extends TestCase
     }
 
     /**
-     * Проверка порядка свойст
+     * Проверка порядка свойст при сохранений
      * Для XML:
      * Дата
      * Скорость ветра

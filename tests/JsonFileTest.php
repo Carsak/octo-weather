@@ -6,8 +6,14 @@ use App\File\JsonFile;
 use App\Parser;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Проверка работы с json файлом
+ */
 class JsonFileTest extends TestCase
 {
+    /**
+     * Проверка корректной записи
+     */
     public function testPositiveGetDataAsString()
     {
         $parser = new Parser(City::NAME);
@@ -20,7 +26,7 @@ class JsonFileTest extends TestCase
     }
 
     /**
-     * Проверка порядка полей
+     * Проверка порядка полей при сохранений
      * Для JSON первыми по порядку должны быть поля:
      * Дата
      * Температура
@@ -45,6 +51,9 @@ class JsonFileTest extends TestCase
         }
     }
 
+    /**
+     * Проверка, если город передан неверно
+     */
     public function testNegativeGetDataAsString()
     {
         $parser = new Parser(City::INCORRECT_NAME);
