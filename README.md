@@ -1,4 +1,5 @@
 # Задача
+[![Build Status](https://travis-ci.org/Carsak/octo-weather.svg?branch=master)](https://travis-ci.org/Carsak/octo-weather)
   
 Необходимо реализовать функционал, который будет получать информацию о  
 погоде из любого публичного API.  
