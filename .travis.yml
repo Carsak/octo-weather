@@ -5,3 +5,10 @@ deploy:
   provider: heroku
   api_key:
     secure: bkYGtlvRopIGCRPCKQxPtvwEnQsfTBaQmWIlaEWoKun/7fHbcHjcyjiwvBVemjcbwXaH8BSVz4HoMhif9P1svgX+If5v7SBuCghuMkrTtGJbhLM7bcdI2gOCG/6dvrPpI0GTEuZS91KqYoiBJ/81j9vmtZh2UCguO6MW98f69pUin4+ApSNwNA3TGde0Q5ZAIoarOfZA+RSuivraywsli1arNiEojhXTU7jqH8VvD8rJP/kRdisdhLHd+FXH+LsZoEoG6zVlLlKh0Oy3+V3N+919KQDtfCISBEesq+liAE5jn2NIyXt/9GN7oSDojEG1FeCSmNyZtmLffokzkGmJjuO53s57kzE7l6Y5qh1GVJ/6KEiyn67ZtK3vJHiFjZejKNMzbStKVjggOI8c5Zp48sTiLfzjgJcPtF+4M//b3SSkk9b9YTrEYnhNt9G7sSqJhgyDXyOHImephjilsLGRhpLvacjbctU16mU1yndYeoKml8KlmoB4fVQjqQwblZNLr1EUU7M9EEY+D3UZ1MWRFmSAaR6oMmvc73WeMzCEtlqtMwEuUKr3FnXUBPbC501RTgiYpHVIG058NEWyysnYxmxtnWATiVmmu1Cz4pQbIUDsmuXesMnUmpCcF4mIltHcnUC5PrNDBAKl3brEi1og9ORPtf9cYRK6/a2TgIW02gU=
+services: docker
+env:
+  - DOCKER_COMPOSE_VERSION=1.4.2
+before_install:
+  - docker -v
+  - docker-compose -v
+  - docker-compose build
