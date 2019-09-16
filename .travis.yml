@@ -11,4 +11,4 @@ env:
 before_install:
   - docker -v
   - docker-compose -v
-  - docker-compose up --build
+  - docker-compose up -d
